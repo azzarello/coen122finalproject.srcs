@@ -36,7 +36,7 @@ module alu(select, A, B, Out, Z, N);
     mux_2_1 m1(B, 0, in_2_1, out_2_1);
     
     
-    wire [31:0] neg_A; // to be added later
+    wire [31:0] neg_A; 
     twos_complement comp(A, neg_A);
     
     // 3_1 mux
