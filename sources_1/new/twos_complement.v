@@ -3,7 +3,7 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 04/14/2021 02:43:25 PM
+// Create Date: 04/19/2021 02:59:04 PM
 // Design Name: 
 // Module Name: twos_complement
 // Project Name: 
@@ -21,27 +21,17 @@
 
 
 module twos_complement(in, out);
-input [7:0] in;
-output reg [7:0] out;
+input [31:0] in;
+output wire [31:0] out;
+wire N, Z;
+
+reg [31:0] a_flipped;
+
+
+full_adder_32 adder(a_flipped, 1, out, Z, N);
+
 always@(in)
 begin
-    
+    a_flipped = in ^ 32'hFFFFFFFF;
 end
-endmodule
-
-
-input d1, d2, d3;
-input [1:0] sel;
-output reg out;
-
-always@(d1, d2, d3, sel)
-begin
-    if (sel == 2'b00)
-        out = d1;
-    else if (sel == 2'b01)
-        out = d2;
-    else if (sel == 2'b10 || sel == 2'b11)
-        out = d3;
-end
-
 endmodule
