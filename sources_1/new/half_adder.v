@@ -3,7 +3,7 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 04/14/2021 03:11:22 PM
+// Create Date: 04/19/2021 02:55:57 PM
 // Design Name: 
 // Module Name: half_adder
 // Project Name: 
@@ -18,7 +18,6 @@
 // Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
-
 
 module half_adder(a, b, s, c);
 input a, b;
