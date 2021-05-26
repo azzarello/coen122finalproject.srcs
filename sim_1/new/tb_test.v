@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 04/14/2021 03:52:59 PM
+// Create Date: 05/19/2021 02:41:16 PM
 // Design Name: 
-// Module Name: mux_2_1
+// Module Name: tb_test
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,18 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module mux_2_1(d1, d2, sel, out);
-input [31:0] d1;
-input [31:0] d2;
-input sel;
-output reg [31:0] out;
+module tb_test(
 
-always@(d1, d2, sel)
-begin
-    if (sel == 0)
-        out = d1;
-    else if (sel == 1)
-        out = d2;
-end
-
+    );
 endmodule

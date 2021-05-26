@@ -3,7 +3,7 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 04/14/2021 02:37:15 PM
+// Create Date: 04/14/2021 03:57:18 PM
 // Design Name: 
 // Module Name: mux_3_1
 // Project Name: 
@@ -19,12 +19,11 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+
 module mux_3_1(d1, d2, d3, sel, out);
-input [31:0] d1;
-input [31:0] d2;
-input [31:0] d3;
-output reg [31:0] out;
+input [31:0] d1, d2, d3;
 input [1:0] sel;
+output reg [31:0] out;
 
 always@(d1, d2, d3, sel)
 begin

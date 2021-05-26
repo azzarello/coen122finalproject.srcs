@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 04/14/2021 03:52:59 PM
+// Create Date: 04/19/2021 03:18:20 PM
 // Design Name: 
-// Module Name: mux_2_1
+// Module Name: tb_full_adder_32
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,18 +20,28 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module mux_2_1(d1, d2, sel, out);
-input [31:0] d1;
-input [31:0] d2;
-input sel;
-output reg [31:0] out;
+module tb_full_adder_32();
 
-always@(d1, d2, sel)
+reg [31:0] a, b;
+wire [31:0] out;
+wire Z, N;
+
+full_adder_32 test(a, b, out, Z, N);
+
+initial
 begin
-    if (sel == 0)
-        out = d1;
-    else if (sel == 1)
-        out = d2;
-end
 
+    a = 1;
+    b = 2;
+    #50;
+    
+    a = 0;
+    b = 0;
+    #50;
+    
+    a = 1000;
+    b = 1;
+    #50;
+
+end
 endmodule

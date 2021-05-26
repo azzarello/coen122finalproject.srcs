@@ -3,7 +3,7 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 04/14/2021 03:26:13 PM
+// Create Date: 04/19/2021 02:57:27 PM
 // Design Name: 
 // Module Name: full_adder_32
 // Project Name: 
@@ -20,10 +20,13 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module full_adder_32(a, b, s);
+module full_adder_32(a, b, s, Z, N);
 input [31:0] a;
 input [31:0] b;
-output [31:0] s;
+output wire [31:0] s;
+output reg Z, N;
+
+
 wire [31:0] c;
 
 full_adder x1(a[0], b[0], 0, s[0], c[0]);
@@ -59,5 +62,18 @@ full_adder x30(a[29], b[29], c[28], s[29], c[29]);
 full_adder x31(a[30], b[30], c[29], s[30], c[30]);
 full_adder x32(a[31], b[31], c[30], s[31], c[31]);
 
+always@(s)
+begin
+    if (s == 0)
+        Z = 1;
+    else
+        Z = 0;
+        
+    if (s[31] == 1)
+        N = 1;
+    else 
+        N = 0;
+end
 
 endmodule
+
