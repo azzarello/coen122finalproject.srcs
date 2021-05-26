@@ -27,17 +27,13 @@ output reg [1:0] out3_1;
 
 always@(select)
 begin
-    if(select == 4'b0000) begin
+    if(select == 3'b100) begin
+        // Logic for addition
         // select B from 2_1 and A from 3_1
         out2_1 = 0;
         out3_1 = 2'b00;
     end
-    else if(select == 4'b0001) begin
-        // select B from 2_1 and 1 from 3_1
-        out2_1 = 0;
-        out3_1 = 2'b01;
-    end
-    else if(select == 4'b0010) begin
+    else if(select == 3'b010) begin
         // select 0 from 2_1 and -A from 3_1
         out2_1 = 1;
         out3_1 = 2'b10;
