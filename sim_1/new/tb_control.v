@@ -33,7 +33,29 @@ control test(opcode, aluOp, memRead, memWrite, aluSrc, writeBackControl, regWrt,
     
 initial
 begin
-    opcode = 4'b1111;
+    opcode = 4'b1111; // save pc
+    #50;
+    opcode = 4'b1110; // load
+    #50;
+    opcode = 4'b0011; // store
+    #50;
+    opcode = 4'b0100; // add
+    #50;
+    opcode = 4'b0101; // increment
+    #50;
+    opcode = 4'b0110; // negate
+    #50;
+    opcode = 4'b0111; // subtract
+    #50;
+    opcode = 4'b1000; // jump
+    #50;
+    opcode = 4'b1001; // branch zero
+    #50;
+    opcode = 4'b1010; // jump mem
+    #50;
+    opcode = 4'b1011; // branch neg
+    #50;
+    opcode = 4'b0000; // noop
     #50;
     $finish;
 end
