@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 04/28/2021 02:47:05 PM
+// Create Date: 04/21/2021 04:26:55 PM
 // Design Name: 
-// Module Name: data_memory
+// Module Name: instruction_memory
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,19 +20,26 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module data_memory(clock, write, read, addr, in, out);
+module instruction_memory(clock, addr, data_out);
+input clock;
+input [255:0] addr;
 
-input clock, write, read;
-input [31:0] addr;
-input [31:0] in;
-output reg[31:0] out;
+output reg [31:0] data_out;
 
-reg [31:0] data [65535:0];
+reg [31:0] data [255:0];
+
+integer i;
+
+initial
+begin
+    for(i= 0; i < 256; i = i + 1)
+    begin
+        data[i] = i;
+    end
+end
+
 always@(posedge clock)
 begin
-    if (write == 0)
-        out = data[addr[15:0]];
-    else if (write == 1)
-        data[addr[15:0]] = in;
+    data_out = data[addr];
 end
 endmodule
