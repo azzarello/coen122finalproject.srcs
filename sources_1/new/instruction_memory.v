@@ -22,16 +22,16 @@
 
 module instruction_memory(clock, addr, data_out);
 input clock;
-input [255:0] addr;
+input [7:0] addr;
 
 output reg [31:0] data_out;
 
-reg [31:0] data [255:0];
+reg [31:0] data [7:0];
 
 integer i;
 
 initial
-begin
+begin // todo update this to initialize instructions
     for(i= 0; i < 256; i = i + 1)
     begin
         data[i] = i;
