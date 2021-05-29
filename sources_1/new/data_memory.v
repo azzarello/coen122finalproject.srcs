@@ -39,7 +39,7 @@ initial
 begin
 	data[0] = 20123;
 	data[1] = 18833;
-	data[2] = 39041
+	data[2] = 39041;
 	data[3] = -16424;
 	data[4] = 36453;
 	data[5] = 11705;

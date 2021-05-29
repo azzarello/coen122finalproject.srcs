@@ -30,6 +30,6 @@ always@(rs, rt)
     begin
         rs_rt [5:0] = rt;
         rs_rt [11:6] = rs;
-        out <= $unsigned(rs_rt);
+        out <= $signed(rs_rt);
     end
 endmodule
