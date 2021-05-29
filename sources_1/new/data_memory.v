@@ -35,4 +35,27 @@ begin
     else if (write == 1)
         data[addr[15:0]] = in;
 end
+initial
+begin
+	data[0] = 20123;
+	data[1] = 18833;
+	data[2] = 39041
+	data[3] = -16424;
+	data[4] = 36453;
+	data[5] = 11705;
+	data[6] = -49943;
+	data[7] = 58324;
+	data[8] = -35654;
+	data[9] = -37822;
+	data[10] = -2700;
+	data[11] = 2050;
+	data[12] = 46716;
+	data[13] = -40214;
+	data[14] = -19144;
+	data[15] = -26370;
+	data[16] = -17979;
+	data[17] = -26735;
+	data[18] = -29557;
+	data[19] = 14800;
+end
 endmodule
