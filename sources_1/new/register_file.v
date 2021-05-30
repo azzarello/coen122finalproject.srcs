@@ -32,12 +32,11 @@ module register_file(clock, rs_addr, rt_addr, rd_addr, write, data_in, rs, rt);
     
     always@(posedge clock)
     begin
-        if (write == 0) begin
-            rs = data[rs_addr];
-            rt = data[rt_addr];
-        end
-        else
+        if (write == 1)
             data[rd_addr] = data_in;
+            
+        rs = data[rs_addr];
+        rt = data[rt_addr];
     end
     initial
     begin
