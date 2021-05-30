@@ -20,11 +20,11 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module datapath(clock);
-input clock;
+module datapath();
+reg clock;
 
 //***IF Wires***
-wire [31:0] pc_cur, pc_next, pc_plus_1;
+wire [31:0] pc_in, pc_out, pc_plus_1;
 wire [31:0] instr;
 
 //***ID Wires***
@@ -86,20 +86,20 @@ wire branchControl;
 wire [31:0] writeBackData;
 
 //IF components
-pc_register pcreg(clock, pc_cur, pc_next);
-full_adder_32 pc_addr(pc_cur, 32'd1, pc_plus_1);
-mux_2_1 m4(pc_plus_1, jumpAddress, branchControl, pc_next);
-instruction_memory imem(clock, pc_next, instr);
+pc_register pcreg(clock, pc_in, pc_out);
+full_adder_32 pc_addr(pc_out, 32'd1, pc_plus_1);
+mux_2_1 m4(pc_plus_1, jumpAddress, branchControl, pc_in);
+instruction_memory imem(clock, pc_out[7:0], instr);
 
 //IF/ID buffer
-if_id_buf(instr, opcode, rd, rs, rt, pc_id);
+if_id_buf ifidbuf(instr, opcode, rd, rs, rt, pc_id);
 
 //ID components
 control ctrl(opcode, aluOp_id, memRead_id, memWrite_id, aluSrc_id, writeBackControl_id, regWrt_id, branchZero_id, branchNeg_id, jump_id, jumpMem_id);
 sign_extend_rs_rt extend1(rs, rt, rs_rt_32);
 full_adder_32 addr(rs_rt_32, pc_id, pc_plus_y_id);
 register_file rfile(clock, rs, rt, rd, RegWrt, writeBackData, xrs_id, xrt_id);
-sign_extend_rt(rt, y_id);
+sign_extend_rt extend2(rt, y_id);
 
 //ID/EX Buffer
 id_ex_buf idexbuf(aluOp_id, aluOp_ex, memRead_id, memRead_ex, memWrite_id, memWrite_ex, aluSrc_id, aluSrc_ex, writeBackControl_id, writeBackControl_ex, regWrt_id, regWrt_ex, branchZero_id, branchZero_ex, branchNeg_id, branchNeg_ex, jump_id, jump_ex, jumpMem_id,
@@ -118,5 +118,18 @@ ex_wb_buf ex_wb_buf1(writeBackControl_ex, writeBackControl_wb, regWrt_ex, regWrt
 mux_2_1 m2(xrt_wb, readData_wb, jumpMem_wb, jumpAddress);
 mux_3_1 m3(xrt_wb, readData_wb, aluResult_wb, writeBackControl_wb, writeBackData);
 assign branchControl = (branchZero_wb && z_wb) || (branchNeg_wb && n_wb) || jump_wb;
+
+
+integer i;
+initial
+begin
+    clock = 0;
+    #5
+    for (i = 0; i < 100; i = i + 1) begin
+        clock = ~clock;
+        #5;
+    end
+    $finish;
+end
 
 endmodule

@@ -26,10 +26,11 @@ input [31:0] pc_in;
 output reg [31:0] pc_out;
 
 initial
-    pc_out = 0;
+    pc_out = 32'd0;
     
-always@(posedge clock)
+always@(negedge clock)
 begin
-    pc_out = pc_in;
+    if (pc_in[0] != 1'bX)
+        pc_out = pc_in;
 end
 endmodule
