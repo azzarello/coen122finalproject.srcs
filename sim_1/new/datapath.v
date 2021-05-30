@@ -112,7 +112,7 @@ alu alu1(aluOp_ex, xrs_ex, aluSrc, aluResult_ex, z_ex, n_ex);
 
 //EX/WB Buffer
 ex_wb_buf ex_wb_buf1(writeBackControl_ex, writeBackControl_wb, regWrt_ex, regWrt_wb, branchZero_ex, branchZero_wb, branchNeg_ex, branchNeg_wb, jump_ex, jump_wb, jumpMem_ex,
-          jumpMem_wb, pc_plus_y_ex, pc_plus_y_wb, xrt_ex, xrt_wb, readData_ex, readData_wb, aluResult_ex, aluResult_wb, z_ex, z_wb, n_ex, n_wb);
+          jumpMem_wb, pc_plus_y_ex, pc_plus_y_wb, xrs_ex, xrs_wb, readData_ex, readData_wb, aluResult_ex, aluResult_wb, z_ex, z_wb, n_ex, n_wb);
           
 //WB components
 mux_2_1 m2(xrt_wb, readData_wb, jumpMem_wb, jumpAddress);
