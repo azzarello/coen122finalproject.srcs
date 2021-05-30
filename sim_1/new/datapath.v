@@ -99,7 +99,7 @@ control ctrl(opcode, aluOp_id, memRead_id, memWrite_id, aluSrc_id, writeBackCont
 sign_extend_rs_rt extend1(rs, rt, rs_rt_32);
 full_adder_32 addr(rs_rt_32, pc_id, pc_plus_y_id);
 register_file rfile(clock, rs, rt, rd, RegWrt, writeBackData, xrs_id, xrt_id);
-sign_extend_rs(rs, y_id);
+sign_extend_rt(rt, y_id);
 
 //ID/EX Buffer
 id_ex_buf idexbuf(aluOp_id, aluOp_ex, memRead_id, memRead_ex, memWrite_id, memWrite_ex, aluSrc_id, aluSrc_ex, writeBackControl_id, writeBackControl_ex, regWrt_id, regWrt_ex, branchZero_id, branchZero_ex, branchNeg_id, branchNeg_ex, jump_id, jump_ex, jumpMem_id,
