@@ -71,7 +71,7 @@ wire regWrt_wb, branchZero_wb, branchNeg_wb, jump_wb, jumpMem_wb;
 
 wire [31:0] pc_plus_y_wb;
 
-wire [5:0] xrt_wb;
+wire [5:0] xrs_wb;
 
 wire [31:0] readData_wb;
 

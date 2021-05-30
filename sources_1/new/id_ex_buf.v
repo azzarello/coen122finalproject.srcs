@@ -51,7 +51,7 @@ begin
 	branchZero_ex = branchZero_id;
 	branchNeg_ex = branchNeg_id;
 	jump_ex = jump_id;
-	jumpMem_id = jumpMem_ex;
+	jumpMem_ex = jumpMem_id;
 	aluOp_ex = aluOp_id;
 	memRead_ex = memRead_id;
 	memWrite_ex = memWrite_id;
