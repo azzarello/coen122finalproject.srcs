@@ -22,37 +22,37 @@
 
 module tb_alu();
 reg [31:0] a, b;
-reg [3:0] select;
+reg [2:0] opcode;
 wire [31:0] out;
 wire Z, N;
 
-alu test(select, a, b, out, Z, N);
+alu test(opcode, a, b, out, Z, N);
 
 initial
 begin
-    a = 'h6;
-    b = 'h5;
+    a = 'd6;
+    b = 'd5;
     
-    select = 4'b0000;
-    #100;
+    opcode = 3'b100; // add
+    #5;
     
-    select = 4'b0001;
-    #100;
+    opcode = 3'b010; // negate
+    #5;
     
-    select = 4'b0010;
-    #100;
+    opcode = 3'b001; // subtract
+    #5;
     
-    select = 4'b0011;
-    #100;
-
-    select = 4'b0100;
-    #100;
+    opcode = 3'b000; // nothing
+    #5;
     
-    a = 'h6;
-    b = 'h6;
-    select = 4'b0011;
-    #100;
-
+    opcode = 3'b111; // pass A
+    #5;
+    
+    a = 'd6;
+    b = 'd6;
+    opcode = 3'b001;;
+    #5;
+    $finish;
 end
 endmodule
 

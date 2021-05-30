@@ -20,30 +20,35 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module alu(select, A, B, Out, Z, N);
-    input [2:0] select;
+module alu(opcode, A, B, Out, Z, N);
+    input [2:0] opcode;
     input [31:0] A, B;
-    output wire [31:0] Out;
-    output wire Z, N;
+    output reg [31:0] Out;
+    output reg Z, N;
     
     // selection logic
-    wire in_2_1;
-    wire [1:0] in_3_1;
-    selector sel(select, in_2_1, in_3_1);
+    always@(opcode, A, B)begin
+    if (opcode == 3'b100)
+        Out = A + B;
+    else if(opcode == 3'b010)
+        Out = ~B + 1;
+    else if (opcode == 3'b001)
+        Out = B + (~A + 1);
+    else if (opcode == 3'b111)
+        Out = A;
+
     
-    // 2_1 mux
-    wire [31:0] out_2_1;
-    mux_2_1 m1(B, 0, in_2_1, out_2_1);
-    
-    
-    wire [31:0] neg_A; 
-    twos_complement comp(A, neg_A);
-    
-    // 3_1 mux
-    wire [31:0] out_3_1;
-    mux_3_1 m2(A, 1, neg_A, in_3_1, out_3_1);
-    
-    
-    full_adder_32 addr(out_2_1, out_3_1, Out, Z, N);
-    
+    if (Out == 0) begin
+        Z = 1;
+        N = 0;
+    end
+    else if (Out[31] == 1'b1) begin
+        Z = 0;
+        N = 1;
+    end
+    else begin
+        Z = 0;
+        N = 0;
+    end
+    end
 endmodule
