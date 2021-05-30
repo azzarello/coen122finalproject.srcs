@@ -92,7 +92,7 @@ mux_2_1 m4(pc_plus_1, jumpAddress, branchControl, pc_in);
 instruction_memory imem(clock, pc_out[7:0], instr);
 
 //IF/ID buffer
-if_id_buf ifidbuf(clock, instr, opcode, rd, rs, rt, pc_id);
+if_id_buf ifidbuf(clock, instr, opcode, rd, rs, rt, pc_out, pc_id);
 
 //ID components
 control ctrl(opcode, aluOp_id, memRead_id, memWrite_id, aluSrc_id, writeBackControl_id, regWrt_id, branchZero_id, branchNeg_id, jump_id, jumpMem_id);

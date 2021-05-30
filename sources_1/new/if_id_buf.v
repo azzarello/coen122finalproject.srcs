@@ -20,9 +20,9 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module if_id_buf(clock, instr, opcode, rd, rs, rt, pc_id);
+module if_id_buf(clock, instr, opcode, rd, rs, rt, pc_if, pc_id);
 input clock;
-input [31:0] instr;
+input [31:0] instr, pc_if;
 
 output reg [3:0] opcode;
 output reg [5:0] rd, rs, rt;
@@ -34,5 +34,6 @@ begin
     rd = instr[27:22];
     rs = instr[21:16];
     rt = instr[15:10];
+    pc_id = pc_if;
 end
 endmodule
