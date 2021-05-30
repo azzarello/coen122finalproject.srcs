@@ -92,7 +92,7 @@ mux_2_1 m4(pc_plus_1, jumpAddress, branchControl, pc_in);
 instruction_memory imem(clock, pc_out[7:0], instr);
 
 //IF/ID buffer
-if_id_buf ifidbuf(instr, opcode, rd, rs, rt, pc_id);
+if_id_buf ifidbuf(clock, instr, opcode, rd, rs, rt, pc_id);
 
 //ID components
 control ctrl(opcode, aluOp_id, memRead_id, memWrite_id, aluSrc_id, writeBackControl_id, regWrt_id, branchZero_id, branchNeg_id, jump_id, jumpMem_id);
@@ -102,7 +102,7 @@ register_file rfile(clock, rs, rt, rd, RegWrt, writeBackData, xrs_id, xrt_id);
 sign_extend_rt extend2(rt, y_id);
 
 //ID/EX Buffer
-id_ex_buf idexbuf(aluOp_id, aluOp_ex, memRead_id, memRead_ex, memWrite_id, memWrite_ex, aluSrc_id, aluSrc_ex, writeBackControl_id, writeBackControl_ex, regWrt_id, regWrt_ex, branchZero_id, branchZero_ex, branchNeg_id, branchNeg_ex, jump_id, jump_ex, jumpMem_id,
+id_ex_buf idexbuf(clock, aluOp_id, aluOp_ex, memRead_id, memRead_ex, memWrite_id, memWrite_ex, aluSrc_id, aluSrc_ex, writeBackControl_id, writeBackControl_ex, regWrt_id, regWrt_ex, branchZero_id, branchZero_ex, branchNeg_id, branchNeg_ex, jump_id, jump_ex, jumpMem_id,
           jumpMem_ex, pc_plus_y_ex, pc_plus_y_id, xrs_id, xrs_ex, xrt_id, xrt_ex, y_id, y_ex);
           
 //EX components
@@ -111,7 +111,7 @@ mux_2_1 aluSrcMux(xrt_ex, y_ex, aluSrc_ex, aluSrcInput);
 alu alu1(aluOp_ex, xrs_ex, aluSrc, aluResult_ex, z_ex, n_ex);
 
 //EX/WB Buffer
-ex_wb_buf ex_wb_buf1(writeBackControl_ex, writeBackControl_wb, regWrt_ex, regWrt_wb, branchZero_ex, branchZero_wb, branchNeg_ex, branchNeg_wb, jump_ex, jump_wb, jumpMem_ex,
+ex_wb_buf ex_wb_buf1(clock, writeBackControl_ex, writeBackControl_wb, regWrt_ex, regWrt_wb, branchZero_ex, branchZero_wb, branchNeg_ex, branchNeg_wb, jump_ex, jump_wb, jumpMem_ex,
           jumpMem_wb, pc_plus_y_ex, pc_plus_y_wb, xrs_ex, xrs_wb, readData_ex, readData_wb, aluResult_ex, aluResult_wb, z_ex, z_wb, n_ex, n_wb);
           
 //WB components
