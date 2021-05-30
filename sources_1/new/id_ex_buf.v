@@ -46,5 +46,19 @@ output reg [31:0] y_ex;
 
 always@(posedge clock)
 begin
+	writeBackControl_ex = writeBackControl_id;
+	regWrt_ex = regWrt_id;
+	branchZero_ex = branchZero_id;
+	branchNeg_ex = branchNeg_id;
+	jump_ex = jump_id;
+	jumpMem_id = jumpMem_ex;
+	aluOp_ex = aluOp_id;
+	memRead_ex = memRead_id;
+	memWrite_ex = memWrite_id;
+	aluSrc_ex = aluSrc_id;
+	pc_plus_y_ex = pc_plus_y_id;
+	xrs_ex = xrs_id;
+	xrt_ex = xrt_id;
+	y_ex = y_id;
 end
 endmodule
