@@ -21,10 +21,10 @@
 
 
 module datapath();
-reg clock = 0;
+reg clock;
 
 //***IF Wires***
-wire [31:0] pc_cur, pc_next, pc_plus_1;
+wire [31:0] pc_in, pc_out, pc_plus_1;
 wire [31:0] instr;
 
 //***ID Wires***
@@ -86,10 +86,10 @@ wire branchControl;
 wire [31:0] writeBackData;
 
 //IF components
-pc_register pcreg(clock, pc_cur, pc_next);
-full_adder_32 pc_addr(pc_cur, 32'd1, pc_plus_1);
-mux_2_1 m4(pc_plus_1, jumpAddress, branchControl, pc_next);
-instruction_memory imem(clock, pc_next, instr);
+pc_register pcreg(clock, pc_in, pc_out);
+full_adder_32 pc_addr(pc_out, 32'd1, pc_plus_1);
+mux_2_1 m4(pc_plus_1, jumpAddress, branchControl, pc_in);
+instruction_memory imem(clock, pc_out[7:0], instr);
 
 //IF/ID buffer
 if_id_buf ifidbuf(instr, opcode, rd, rs, rt, pc_id);
@@ -123,7 +123,8 @@ assign branchControl = (branchZero_wb && z_wb) || (branchNeg_wb && n_wb) || jump
 integer i;
 initial
 begin
-    clock = 1;
+    clock = 0;
+    #5
     for (i = 0; i < 100; i = i + 1) begin
         clock = ~clock;
         #5;
