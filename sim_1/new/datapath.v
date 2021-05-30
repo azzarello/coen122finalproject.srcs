@@ -125,7 +125,7 @@ initial
 begin
     clock = 0;
     #5
-    for (i = 0; i < 100; i = i + 1) begin
+    for (i = 0; i < (63 * 2); i = i + 1) begin
         clock = ~clock;
         #5;
     end

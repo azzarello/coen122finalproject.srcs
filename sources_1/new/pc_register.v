@@ -30,7 +30,7 @@ initial
     
 always@(negedge clock)
 begin
-    if (pc_in[0] != 1'bX)
+    if (pc_in)
         pc_out = pc_in;
 end
 endmodule
