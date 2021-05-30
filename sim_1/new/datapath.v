@@ -108,7 +108,7 @@ id_ex_buf idexbuf(clock, aluOp_id, aluOp_ex, memRead_id, memRead_ex, memWrite_id
           jumpMem_ex, pc_plus_y_ex, pc_plus_y_id, xrs_id, xrs_ex, xrt_id, xrt_ex, y_id, y_ex, rd_id, rd_ex);
           
 //EX components
-data_memory dmem(clock, memWrite_ex, memRead_ex, xrs, xrt, readData_ex);
+data_memory dmem(clock, memWrite_ex, memRead_ex, xrs_ex, xrt_ex, readData_ex);
 mux_2_1 aluSrcMux(xrt_ex, y_ex, aluSrc_ex, aluSrcInput);
 alu alu1(aluOp_ex, xrs_ex, aluSrcInput, aluResult_ex, z_ex, n_ex);
 
@@ -117,8 +117,8 @@ ex_wb_buf ex_wb_buf1(clock, writeBackControl_ex, writeBackControl_wb, regWrt_ex,
           jumpMem_wb, pc_plus_y_ex, pc_plus_y_wb, xrs_ex, xrs_wb, readData_ex, readData_wb, aluResult_ex, aluResult_wb, z_ex, z_wb, n_ex, n_wb, rd_ex, rd_wb);
           
 //WB components
-mux_2_1 m2(xrt_wb, readData_wb, jumpMem_wb, jumpAddress);
-mux_3_1 m3(xrt_wb, readData_wb, aluResult_wb, writeBackControl_wb, writeBackData);
+mux_2_1 m2(xrs_wb, readData_wb, jumpMem_wb, jumpAddress);
+mux_3_1 m3(xrs_wb, readData_wb, aluResult_wb, writeBackControl_wb, writeBackData);
 assign branchControl = (branchZero_wb && z_wb) || (branchNeg_wb && n_wb) || jump_wb;
 
 
