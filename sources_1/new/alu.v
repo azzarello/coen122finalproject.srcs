@@ -33,7 +33,7 @@ module alu(opcode, A, B, Out, Z, N);
     else if(opcode == 3'b010)
         Out = ~B + 1;
     else if (opcode == 3'b001)
-        Out = B + (~A + 1);
+        Out = A + (~B + 1);
     else if (opcode == 3'b111)
         Out = A;
 

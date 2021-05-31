@@ -30,11 +30,14 @@ output reg[31:0] out;
 reg [31:0] data [65535:0];
 always@(posedge clock)
 begin
-    if (write == 0)
-        out = data[addr[15:0]];
-    else if (write == 1)
+    if (write == 1)
         data[addr[15:0]] = in;
 end
+
+always@(addr) begin
+    out = data[addr[15:0]];
+end
+
 initial
 begin
 	data[0] = 20123;

@@ -149,7 +149,7 @@ begin
             
          4'b1011: // branch if negative
             begin
-            aluOp = 3'b001;
+            aluOp = 3'b000;
             memRead = 0;
             memWrite = 0;
             aluSrc = 0;
@@ -173,7 +173,7 @@ begin
             jump = 1;
             jumpMem = 1;
             end
-         4'b0000: // jump mem
+         4'b0000: // noop
             begin
             aluOp = 0;
             memRead = 0;
