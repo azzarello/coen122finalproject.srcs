@@ -28,7 +28,7 @@ output reg [31:0] pc_out;
 initial
     pc_out = 32'd0;
     
-always@(negedge clock)
+always@(posedge clock)
 begin
     if (pc_in)
         pc_out = pc_in;

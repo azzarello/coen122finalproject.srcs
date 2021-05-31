@@ -29,7 +29,7 @@ output reg [31:0] data_out;
 reg [31:0] data [255:0];
 
 
-always@(posedge clock)
+always@(addr)
 begin
 	data_out = data[addr];
 end
@@ -68,7 +68,7 @@ begin
 	data[29] = 0;
 	data[30] = 0;
 	data[31] = 0;
-	data[32] = 32'b0111_0001_1100_0010_0001_0000_0000_0000; // sub x7, x6
+	data[32] = 32'b0111_0001_1100_0010_0001_0000_0000_0000; // sub x7, x6, x4
 	data[33] = 0;
 	data[34] = 0;
 	data[35] = 0;

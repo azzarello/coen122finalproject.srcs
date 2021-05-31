@@ -34,14 +34,18 @@ module register_file(clock, rs_addr, rt_addr, rd_addr, write, data_in, rs, rt);
     begin
         if (write == 1)
             data[rd_addr] = data_in;
-            
+    end
+    
+    always@(rs_addr, rt_addr) begin
         rs = data[rs_addr];
         rt = data[rt_addr];
     end
+        
     initial
     begin
 	    data[0] = 0;
 	    data[2] = 0;
 	    data[3] = 19;
+	    data[4] = 0;
     end
 endmodule

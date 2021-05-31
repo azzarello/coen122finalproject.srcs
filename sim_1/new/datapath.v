@@ -118,18 +118,17 @@ ex_wb_buf ex_wb_buf1(clock, writeBackControl_ex, writeBackControl_wb, regWrt_ex,
           
 //WB components
 mux_2_1 m2(xrs_wb, readData_wb, jumpMem_wb, jumpAddress);
-mux_3_1 m3(xrs_wb, readData_wb, aluResult_wb, writeBackControl_wb, writeBackData);
+mux_3_1 m3(pc_plus_y_wb, readData_wb, aluResult_wb, writeBackControl_wb, writeBackData);
 assign branchControl = (branchZero_wb && z_wb) || (branchNeg_wb && n_wb) || jump_wb;
 
 
 integer i;
 initial
 begin
-    clock = 0;
-    #5
+    clock = 1;
     for (i = 0; i < (2 * 63); i = i + 1) begin
-        clock = ~clock;
         #5;
+        clock = ~clock;
     end
     $finish;
 end
