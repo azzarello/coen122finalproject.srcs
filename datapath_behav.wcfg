@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="datapath_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="datapath" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="4299540fs"></ZoomStartTime>
+      <ZoomEndTime time="4355241fs"></ZoomEndTime>
+      <Cursor1Time time="4332040fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="138"></NameColumnWidth>
+      <ValueColumnWidth column_width="66"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="62" />
+   <wvobject fp_name="/datapath/clock" type="logic">
+      <obj_property name="ElementShortName">clock</obj_property>
+      <obj_property name="ObjectShortName">clock</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/pc_in" type="array">
+      <obj_property name="ElementShortName">pc_in[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pc_in[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/pc_out" type="array">
+      <obj_property name="ElementShortName">pc_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pc_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/pc_plus_1" type="array">
+      <obj_property name="ElementShortName">pc_plus_1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pc_plus_1[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/instr" type="array">
+      <obj_property name="ElementShortName">instr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">instr[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/opcode" type="array">
+      <obj_property name="ElementShortName">opcode[3:0]</obj_property>
+      <obj_property name="ObjectShortName">opcode[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/rd_id" type="array">
+      <obj_property name="ElementShortName">rd_id[5:0]</obj_property>
+      <obj_property name="ObjectShortName">rd_id[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/rs" type="array">
+      <obj_property name="ElementShortName">rs[5:0]</obj_property>
+      <obj_property name="ObjectShortName">rs[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/rt" type="array">
+      <obj_property name="ElementShortName">rt[5:0]</obj_property>
+      <obj_property name="ObjectShortName">rt[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/pc_id" type="array">
+      <obj_property name="ElementShortName">pc_id[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pc_id[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/writeBackControl_id" type="array">
+      <obj_property name="ElementShortName">writeBackControl_id[1:0]</obj_property>
+      <obj_property name="ObjectShortName">writeBackControl_id[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/regWrt_id" type="logic">
+      <obj_property name="ElementShortName">regWrt_id</obj_property>
+      <obj_property name="ObjectShortName">regWrt_id</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/branchZero_id" type="logic">
+      <obj_property name="ElementShortName">branchZero_id</obj_property>
+      <obj_property name="ObjectShortName">branchZero_id</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/branchNeg_id" type="logic">
+      <obj_property name="ElementShortName">branchNeg_id</obj_property>
+      <obj_property name="ObjectShortName">branchNeg_id</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/jump_id" type="logic">
+      <obj_property name="ElementShortName">jump_id</obj_property>
+      <obj_property name="ObjectShortName">jump_id</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/jumpMem_id" type="logic">
+      <obj_property name="ElementShortName">jumpMem_id</obj_property>
+      <obj_property name="ObjectShortName">jumpMem_id</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/aluOp_id" type="array">
+      <obj_property name="ElementShortName">aluOp_id[2:0]</obj_property>
+      <obj_property name="ObjectShortName">aluOp_id[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/memRead_id" type="logic">
+      <obj_property name="ElementShortName">memRead_id</obj_property>
+      <obj_property name="ObjectShortName">memRead_id</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/memWrite_id" type="logic">
+      <obj_property name="ElementShortName">memWrite_id</obj_property>
+      <obj_property name="ObjectShortName">memWrite_id</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/aluSrc_id" type="logic">
+      <obj_property name="ElementShortName">aluSrc_id</obj_property>
+      <obj_property name="ObjectShortName">aluSrc_id</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/rs_rt_32" type="array">
+      <obj_property name="ElementShortName">rs_rt_32[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rs_rt_32[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/pc_plus_y_id" type="array">
+      <obj_property name="ElementShortName">pc_plus_y_id[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pc_plus_y_id[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/xrs_id" type="array">
+      <obj_property name="ElementShortName">xrs_id[31:0]</obj_property>
+      <obj_property name="ObjectShortName">xrs_id[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/xrt_id" type="array">
+      <obj_property name="ElementShortName">xrt_id[31:0]</obj_property>
+      <obj_property name="ObjectShortName">xrt_id[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/y_id" type="array">
+      <obj_property name="ElementShortName">y_id[31:0]</obj_property>
+      <obj_property name="ObjectShortName">y_id[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/writeBackControl_ex" type="array">
+      <obj_property name="ElementShortName">writeBackControl_ex[1:0]</obj_property>
+      <obj_property name="ObjectShortName">writeBackControl_ex[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/regWrt_ex" type="logic">
+      <obj_property name="ElementShortName">regWrt_ex</obj_property>
+      <obj_property name="ObjectShortName">regWrt_ex</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/branchZero_ex" type="logic">
+      <obj_property name="ElementShortName">branchZero_ex</obj_property>
+      <obj_property name="ObjectShortName">branchZero_ex</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/branchNeg_ex" type="logic">
+      <obj_property name="ElementShortName">branchNeg_ex</obj_property>
+      <obj_property name="ObjectShortName">branchNeg_ex</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/jump_ex" type="logic">
+      <obj_property name="ElementShortName">jump_ex</obj_property>
+      <obj_property name="ObjectShortName">jump_ex</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/jumpMem_ex" type="logic">
+      <obj_property name="ElementShortName">jumpMem_ex</obj_property>
+      <obj_property name="ObjectShortName">jumpMem_ex</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/aluOp_ex" type="array">
+      <obj_property name="ElementShortName">aluOp_ex[2:0]</obj_property>
+      <obj_property name="ObjectShortName">aluOp_ex[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/memRead_ex" type="logic">
+      <obj_property name="ElementShortName">memRead_ex</obj_property>
+      <obj_property name="ObjectShortName">memRead_ex</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/memWrite_ex" type="logic">
+      <obj_property name="ElementShortName">memWrite_ex</obj_property>
+      <obj_property name="ObjectShortName">memWrite_ex</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/aluSrc_ex" type="logic">
+      <obj_property name="ElementShortName">aluSrc_ex</obj_property>
+      <obj_property name="ObjectShortName">aluSrc_ex</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/pc_plus_y_ex" type="array">
+      <obj_property name="ElementShortName">pc_plus_y_ex[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pc_plus_y_ex[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/rd_ex" type="array">
+      <obj_property name="ElementShortName">rd_ex[5:0]</obj_property>
+      <obj_property name="ObjectShortName">rd_ex[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/xrs_ex" type="array">
+      <obj_property name="ElementShortName">xrs_ex[31:0]</obj_property>
+      <obj_property name="ObjectShortName">xrs_ex[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/xrt_ex" type="array">
+      <obj_property name="ElementShortName">xrt_ex[31:0]</obj_property>
+      <obj_property name="ObjectShortName">xrt_ex[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/y_ex" type="array">
+      <obj_property name="ElementShortName">y_ex[31:0]</obj_property>
+      <obj_property name="ObjectShortName">y_ex[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/readData_ex" type="array">
+      <obj_property name="ElementShortName">readData_ex[31:0]</obj_property>
+      <obj_property name="ObjectShortName">readData_ex[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/aluSrcInput" type="array">
+      <obj_property name="ElementShortName">aluSrcInput[31:0]</obj_property>
+      <obj_property name="ObjectShortName">aluSrcInput[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/aluResult_ex" type="array">
+      <obj_property name="ElementShortName">aluResult_ex[31:0]</obj_property>
+      <obj_property name="ObjectShortName">aluResult_ex[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/z_ex" type="logic">
+      <obj_property name="ElementShortName">z_ex</obj_property>
+      <obj_property name="ObjectShortName">z_ex</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/n_ex" type="logic">
+      <obj_property name="ElementShortName">n_ex</obj_property>
+      <obj_property name="ObjectShortName">n_ex</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/writeBackControl_wb" type="array">
+      <obj_property name="ElementShortName">writeBackControl_wb[1:0]</obj_property>
+      <obj_property name="ObjectShortName">writeBackControl_wb[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/regWrt_wb" type="logic">
+      <obj_property name="ElementShortName">regWrt_wb</obj_property>
+      <obj_property name="ObjectShortName">regWrt_wb</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/branchZero_wb" type="logic">
+      <obj_property name="ElementShortName">branchZero_wb</obj_property>
+      <obj_property name="ObjectShortName">branchZero_wb</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/branchNeg_wb" type="logic">
+      <obj_property name="ElementShortName">branchNeg_wb</obj_property>
+      <obj_property name="ObjectShortName">branchNeg_wb</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/jump_wb" type="logic">
+      <obj_property name="ElementShortName">jump_wb</obj_property>
+      <obj_property name="ObjectShortName">jump_wb</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/jumpMem_wb" type="logic">
+      <obj_property name="ElementShortName">jumpMem_wb</obj_property>
+      <obj_property name="ObjectShortName">jumpMem_wb</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/pc_plus_y_wb" type="array">
+      <obj_property name="ElementShortName">pc_plus_y_wb[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pc_plus_y_wb[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/rd_wb" type="array">
+      <obj_property name="ElementShortName">rd_wb[5:0]</obj_property>
+      <obj_property name="ObjectShortName">rd_wb[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/xrs_wb" type="array">
+      <obj_property name="ElementShortName">xrs_wb[31:0]</obj_property>
+      <obj_property name="ObjectShortName">xrs_wb[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/readData_wb" type="array">
+      <obj_property name="ElementShortName">readData_wb[31:0]</obj_property>
+      <obj_property name="ObjectShortName">readData_wb[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/aluResult_wb" type="array">
+      <obj_property name="ElementShortName">aluResult_wb[31:0]</obj_property>
+      <obj_property name="ObjectShortName">aluResult_wb[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/z_wb" type="logic">
+      <obj_property name="ElementShortName">z_wb</obj_property>
+      <obj_property name="ObjectShortName">z_wb</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/n_wb" type="logic">
+      <obj_property name="ElementShortName">n_wb</obj_property>
+      <obj_property name="ObjectShortName">n_wb</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/jumpAddress" type="array">
+      <obj_property name="ElementShortName">jumpAddress[31:0]</obj_property>
+      <obj_property name="ObjectShortName">jumpAddress[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/branchControl" type="logic">
+      <obj_property name="ElementShortName">branchControl</obj_property>
+      <obj_property name="ObjectShortName">branchControl</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/writeBackData" type="array">
+      <obj_property name="ElementShortName">writeBackData[31:0]</obj_property>
+      <obj_property name="ObjectShortName">writeBackData[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/datapath/i" type="array">
+      <obj_property name="ElementShortName">i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i[31:0]</obj_property>
+   </wvobject>
+</wave_config>

@@ -126,7 +126,7 @@ integer i;
 initial
 begin
     clock = 1;
-    for (i = 0; i < 1000; i = i + 1) begin
+    for (i = 0; i < 1200; i = i + 1) begin
         #5;
         clock = ~clock;
     end
