@@ -126,7 +126,11 @@ integer i;
 initial
 begin
     clock = 1;
+<<<<<<< HEAD
     for (i = 0; i < 10000; i = i + 1) begin
+=======
+    for (i = 0; i < 1000; i = i + 1) begin
+>>>>>>> parent of 5fb941e (fixed off by 1 error + waveform)
         #5;
         clock = ~clock;
     end

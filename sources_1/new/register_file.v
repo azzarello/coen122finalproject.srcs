@@ -45,7 +45,7 @@ module register_file(clock, rs_addr, rt_addr, rd_addr, write, data_in, rs, rt);
     begin
 	    data[0] = 0;
 	    data[2] = 0;
-	    data[3] = 20;
+	    data[3] = 19;
 	    data[4] = 0;
     end
 endmodule
